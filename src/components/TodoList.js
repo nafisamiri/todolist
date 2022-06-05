@@ -1,9 +1,13 @@
-import React, {useState}from 'react'
+import React, {useState, useEffect}from 'react'
 import TodoForm from './TodoForm'
 import Todo from './Todo'
 
 function TodoList() {
     const [todos,setTodos] = useState([]);
+    
+        // useEffect(() => {
+        //     localStorage.setItem([])
+        // }, [todos])
     const addTodo = todo => {
         if(!todo.text ||/^\s*$/.test(todo.text)) {
             return;
@@ -37,6 +41,7 @@ function TodoList() {
         })
        setTodos(updatedTodos)
     }
+    
 
     return (
         <div>
